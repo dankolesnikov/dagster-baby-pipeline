@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 dagster = "*"
 dagit = "*"
+pandas = "*"
+dagster-pandas = "*"
 
 [dev-packages]
 
