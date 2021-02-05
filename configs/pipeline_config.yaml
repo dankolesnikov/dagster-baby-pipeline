@@ -1,9 +1,0 @@
-solids:
-  read_csv_as_df:
-    inputs:
-      path:
-        value: "/Users/danil/Desktop/dagster-pipelines/dagster-baby-pipeline/data/forestfires.csv"
-  save_df:
-    inputs:
-      path:
-        value: "/Users/danil/Desktop/dagster-pipelines/dagster-baby-pipeline/data/processed_df.csv"

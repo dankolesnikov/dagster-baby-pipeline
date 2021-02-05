@@ -1,22 +1,22 @@
 from dagster import solid
 import pandas as pd
-import dagster_pandas as d_pd
+from .constants import *
 
 @solid
-def read_csv_as_df(context, path: str):
+def read_csv_as_df(context, path: str) -> PandasDataFrame:
     if path.startswith("s3://"):
         print("S3 path detected")
-        context.log.info("Getting csv data from S3 {path}")
+        context.log.info(f"Getting csv data from S3 {path}")
     else:
-        context.log.info("Getting csv data locally from {path}")
+        context.log.info(f"Getting csv data locally from {path}")
         return pd.read_csv(path)
 
 @solid
-def save_df(context, df, path: str) -> None:
+def save_df(context, df: PandasDataFrame, path: str) -> None:
     if (path.startswith("s3://")):
-        context.log.info("Saving DataFrame as CSV to S3: {path}")
+        context.log.info(f"Saving DataFrame as CSV to S3: {path}")
     else:
-        context.log.info("Saving DataFrame as CSV to Local Storage: {path}")
+        context.log.info(f"Saving DataFrame as CSV to Local Storage: {path}")
         df.to_csv(path, index=False)
 
         
