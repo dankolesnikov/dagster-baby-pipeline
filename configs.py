@@ -1,10 +1,10 @@
 local_config_raw = {
         "solids": {
             "read_csv_as_df": {
-                "inputs": {"path": {"value": "dagster_baby_pipeline/data/forestfires.csv"}}
+                "inputs": {"path": {"value": "/Users/danil/Desktop/dagster-pipelines/dagster_baby_pipeline/data/forestfires.csv"}}
             },
             "save_df": {
-                "inputs": {"path": {"value": "dagster_baby_pipeline/data/processsed_df.csv"}}
+                "inputs": {"path": {"value": "/Users/danil/Desktop/dagster-pipelines/dagster_baby_pipeline/data/processsed_df.csv"}}
             }
         }
     }

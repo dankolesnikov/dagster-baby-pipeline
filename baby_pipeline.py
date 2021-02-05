@@ -1,22 +1,20 @@
 from dagster import pipeline, solid, PresetDefinition
-from .io_solids import *
-from .logic import *
-from .configs import *
+from dagster_baby_pipeline import constants, configs, io_solids, logic
 
 @pipeline(
     name="BabyPipeline",
     preset_defs=[
         PresetDefinition(
             name="local",
-            run_config=local_config_raw
+            run_config=configs.local_config_raw
         ),
         PresetDefinition(
             name="prod",
-            run_config=prod_config_raw
+            run_config=configs.prod_config_raw
         )
     ]
 )
 def pipeline():
-    df_input = read_csv_as_df()
-    df_processed = transform_data(df_input)
-    save_df(df_processed)
+    df_input = io_solids.read_csv_as_df()
+    df_processed = logic.transform_data(df_input)
+    io_solids.save_df(df_processed)
