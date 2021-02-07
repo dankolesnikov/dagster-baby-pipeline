@@ -1,7 +1,9 @@
 # dagster-baby-pipeline
 Playing around with Dagster Data Orchestration framework
 
-# Setting up local Python environment
+## Functionality
+
+## Setting up local Python environment
 
 Ensure you have `pipenv` installed. 
 ```
@@ -22,8 +24,11 @@ dagster pipeline execute -f baby_pipeline.py -d .. --preset local
 - ~~Understand more about different configs~~
 - Add S3 compatibility for IO using Resource pattern of Dagster
 - Add a Jupyter Notebook
+- Testing Strategies
+- Schema data validation using Dagster Pandas
+- Add Slack messaging
 
-# Deploying to EC2 cluster
+# Cloud Deployment
 
 ### Credits
 
